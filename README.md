@@ -4,7 +4,8 @@
 #include <chrono>
 #include <future>
 #include <thread>
-
+const double M_PI = 3.14;
+using namespace std;
 // Функция для обновления позиции грибника
 void update_position(double& x, double& y, double& total_distance, double angle, double speed, double time) {
     x += speed * cos(angle) * time; // Обновляем координату x
@@ -19,17 +20,17 @@ int collect_mushroom(int mushrooms_collected) {
 
 // Функция для охоты на грибы
 void mushroom_hunting(double& x, double& y, double& total_distance, int& mushrooms_collected, int T) {
-    std::srand(static_cast<unsigned int>(std::time(nullptr))); // Инициализация генератора случайных чисел
+    srand(static_cast<unsigned int>(time(nullptr))); // Инициализация генератора случайных чисел
 
     for (int i = 0; i < T; ++i) {
         // Генерируем случайный угол в радианах
-        double angle = static_cast<double>(std::rand()) / RAND_MAX * 2 * M_PI; // Угол от 0 до 2π
+        double angle = (static_cast<double>(rand()) / RAND_MAX) * 2 * M_PI; // Угол от 0 до 2π
         double speed = 1.0; // Скорость грибника
         double time = 1.0;  // Время движения
 
         // Создаем асинхронное ожидание обновления позиции
-        std::future<void> update_future = std::async(std::launch::async, update_position, std::ref(x), std::ref(y),
-                                                      std::ref(total_distance), angle, speed, time);
+        future<void> update_future = async(launch::async, update_position, ref(x), ref(y),
+            ref(total_distance), angle, speed, time);
 
         // Собираем грибы (можно делать это после обновления позиции для ускорения)
         mushrooms_collected = collect_mushroom(mushrooms_collected);
@@ -40,6 +41,7 @@ void mushroom_hunting(double& x, double& y, double& total_distance, int& mushroo
 }
 
 int main() {
+    setlocale(LC_ALL, "RU");
     double x = 0.0;                       // Начальная координата x
     double y = 0.0;                       // Начальная координата y
     double total_distance = 0.0;          // Общее расстояние
@@ -50,9 +52,9 @@ int main() {
     mushroom_hunting(x, y, total_distance, mushrooms_collected, T);
 
     // Вывод результатов
-    std::cout << "Общая дистанция: " << total_distance << std::endl;
-    std::cout << "Собрано грибов: " << mushrooms_collected << std::endl;
-    std::cout << "Конечные координаты: (" << x << ", " << y << ")" << std::endl;
+    cout << "Общая дистанция: " << total_distance << endl;
+    cout << "Собрано грибов: " << mushrooms_collected << endl;
+    cout << "Конечные координаты: (" << x << ", " << y << ")" << endl;
 
     return 0;
 }
