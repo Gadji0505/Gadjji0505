@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пример страницы с гиперссылками и формой</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #A0AECD; /* Цвет фона страницы */
+            color: #000000; /* Цвет текста */
+        }
+        .navbar, footer {
+            background-color: #FFFFFF; /* Цвет фона меню и подвала */
+        }
+        .navbar-nav .nav-link {
+            color: #000000; /* Цвет текста гиперссылок в меню */
+        }
+        .navbar-nav .nav-link:hover {
+            color: #A0AECD; /* Цвет текста при наведении на ссылки в меню */
+        }
+        a {
+            color: #000000; /* Цвет текста гиперссылок */
+            text-decoration: none; /* Убираем подчеркивание */
+        }
+        a:hover {
+            color: #A0AECD; /* Цвет текста при наведении */
+        }
+        .list-group-item {
+            color: #000000; /* Цвет текста в списке гиперссылок */
+        }
+        .list-group-item a {
+            color: #000000; /* Цвет ссылок в списке гиперссылок */
+        }
+        .list-group-item a:hover {
+            color: #A0AECD; /* Цвет ссылок при наведении в списке гиперссылок */
+        }
+        .selected {
+            background-color: #A0AECD; /* Цвет фона для выделенных языков */
+            color: #000000; /* Цвет текста для выделенных языков */
+        }
+        .table {
+            background-color: #FFFFFF; /* Цвет фона таблицы */
+            color: #000000; /* Цвет текста в таблице */
+        }
+        footer p {
+            color: #000000; /* Цвет текста в подвале */
+        }
+        /* Медиа-запросы для изменения порядка отображения */
+        @media (min-width: 768px) {
+            .table-section {
+                order: 2; /* Сначала ссылки на десктопе */
+            }
+            .links-section {
+                order: 1; /* Затем таблица на десктопе */
+            }
+        }
+        @media (max-width: 767px) {
+            .table-section {
+                order: 1; /* Сначала таблица на мобильных устройствах */
+            }
+            .links-section {
+                order: 2; /* Затем ссылки на мобильных устройствах */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Логотип -->
+    <div class="container text-center py-4">
+        <img src="https://file.aiquickdraw.com/chatgpt/file-fx5QI4r0nOtuhaIyEInqS9is.png" alt="Логотип" class="img-fluid" style="width: 100px; height: 100px;" />
+        <h1>Hello</h1> <!-- Заголовок страницы -->
+    </div>
+
+    <!-- Меню -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link" href="http://kubsu.ru">Главная страница kubsu.ru</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://kubsu.ru">Главная страница kubsu.ru (HTTPS)</a></li>
+                <li class="nav-item"><a class="nav-link" href="html2.html">Сокращенная ссылка на внутреннюю страницу</a></li>
+                <li class="nav-item"><a class="nav-link" href="Web-1.html">Сокращенная ссылка на главную страницу</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-md-12 table-section">
+                <!-- Таблица -->
+                <table class="table table-bordered mt-4">
+                    <thead>
+                        <tr>
+                            <th>Товар</th>
+                            <th>Цена (руб.)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Стул</td>
+                            <td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>Стол</td>
+                            <td>3000</td>
+                        </tr>
+                        <tr>
+                            <td>Шкаф</td>
+                            <td>5000</td>
+                        </tr>
+                        <tr>
+                            <td>Кровать</td>
+                            <td>8000</td>
+                        </tr>
+                        <tr>
+                            <td>Диван</td>
+                            <td>12000</td>
+                        </tr>
+                        <tr>
+                            <td>Тумбочка</td>
+                            <td>1500</td>
+                        </tr>
+                        <tr>
+                            <td>Комод</td>
+                            <td>4000</td>
+                        </tr>
+                        <tr>
+                            <td>Столик для кофе</td>
+                            <td>2500</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-md-12 links-section">
+                <h2>Маркированный список гиперссылок</h2>
+                <ul class="list-group">
+                    <li class="list-group-item"><a href="http://kubsu.ru">Главная страница kubsu.ru</a></li>
+                    <li class="list-group-item"><a href="https://kubsu.ru">Главная страница kubsu.ru (HTTPS)</a></li>
+                    <li class="list-group-item">
+                        <a href="http://kubsu.ru">
+                            <img src="https://cvettorg.ru/upload/resize_cache/webp/iblock/313/313d3d6abfb11184fabacca71e685e42.webp" alt="Цветок" class="img-fluid" />
+                        </a>
+                    </li>
+                    <li class="list-group-item"><a href="html2.html">Сокращенная ссылка на внутреннюю страницу</a></li>
+                    <li class="list-group-item"><a href="Web-1.html">Сокращенная ссылка на главную страницу</a></li>
+                    <li class="list-group-item"><a href="#biography">Ссылка на фрагмент текущей страницы</a></li>
+                    <li class="list-group-item"><a href="https://www.imdb.com/search/title/?genres=action&sort=year,desc&rating=7.0,10.0">Ссылка с тремя параметрами в URL</a></li>
+                    <li class="list-group-item"><a href="https://ru.wikipedia.org/wiki?curid=12345">Ссылка с параметром id в URL</a></li>
+                    <li class="list-group-item"><a href="S-1.html">Относительная ссылка на текущую страницу</a></li>
+                    <li class="list-group-item"><a href="../about-1/Web-2.html">Относительная ссылка на страницу в каталоге about</a></li>
+                    <li class="list-group-item"><a href="../about-1/Web-2.html">Относительная ссылка на страницу на уровень выше</a></li>
+                    <li class="list-group-item"><a href="../../about-2/Level-2.html">Относительная ссылка на страницу двумя уровнями выше</a></li>
+                    <li class="list-group-item">
+                        <span class="custom-color">Контекстная ссылка в тексте абзаца:</span> <a href="https://mellodesign.ru/blogs/kontekstnaya-ssylka" class="custom-color">перейдите по этой ссылке</a>.
+                    </li>
+                    <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/Python_(programming_language)_#History">Ссылка на фрагмент страницы стороннего сайта</a></li>
+                    <li class="list-group-item">
+                        <img src="https://cvettorg.ru/upload/resize_cache/webp/iblock/313/313d3d6abfb11184fabacca71e685e42.webp" alt="Пример изображения" usemap="#image-map" class="img-fluid" />
+                        <map name="image-map">
+                            <area shape="rect" coords="34,44,270,350" href="https://www.wikipedia.org/" alt="Прямоугольная ссылка" />
+                            <area shape="circle" coords="337,300,44" href="https://www.google.com/" alt="Круглая ссылка" />
+                        </map>
+                    </li>
+                    <li class="list-group-item"><a href="" class="text-custom">Ссылка с пустым href</a></li>
+                    <li class="list-group-item"><a href="#" class="text-custom">Ссылка без href</a></li>
+                    <li class="list-group-item"><a href="https://en.wikipedia.org/wiki/Python_(programming_language)_#History" rel="nofollow">Запрещенная ссылка для поисковиков</a></li>
+                    <li class="list-group-item"><a href="http://example.com" rel="noindex">Запрещенная для индексации поисковиками</a></li>
+                    <li class="list-group-item">
+                        <ol>
+                            <li class="custom-color"><a href="http://link1.com">Первая ссылка</a></li>
+                            <li class="custom-color"><a href="http://link2.com">Вторая ссылка</a></li>
+                        </ol>
+                    </li>
+                    <li class="list-group-item"><a href="ftp://user:pass123@tavalik.ru/Temp/file.txt">Ссылка на файл на сервере FTP с авторизацией</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Калькулятор стоимости заказа -->
+        <h2>Калькулятор стоимости заказа</h2> <!-- Заголовок калькулятора -->
+        <form id="orderForm">
+            <div class="form-group">
+                <label for="product">Выберите товар:</label>
+                <select id="product" class="form-control">
+                    <option value="0">-- Выберите товар --</option> <!-- Опция по умолчанию -->
+                    <option value="1000">Стул - 1000 руб.</option> <!-- Опция товара 1 -->
+                    <option value="3000">Стол - 3000 руб.</option> <!-- Опция товара 2 -->
+                    <option value="5000">Шкаф - 5000 руб.</option> <!-- Опция товара 3 -->
+                    <option value="8000">Кровать - 8000 руб.</option> <!-- Опция товара 4 -->
+                    <option value="12000">Диван - 12000 руб.</option> <!-- Опция товара 5 -->
+                    <option value="1500">Тумбочка - 1500 руб.</option> <!-- Опция товара 6 -->
+                    <option value="4000">Комод - 4000 руб.</option> <!-- Опция товара 7 -->
+                    <option value="2500">Столик для кофе - 2500 руб.</option> <!-- Опция товара 8 -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Количество:</label>
+                <input type="number" id="quantity" class="form-control" min="1" required> <!-- Поле для ввода количества -->
+            </div>
+            <!-- Кнопка для подсчета стоимости -->
+            <button type="button" class="btn btn-primary" onclick="calculateCost()">Подсчитать стоимость</button>
+        </form>
+        <h3 class="mt-4">Стоимость заказа: <span id="totalCost">0</span> руб.</h3> <!-- Отображение стоимости заказа -->
+    </div>
+
+    <footer class="text-light text-center py-3">
+        <div class="container">
+            <p>© 2023 Название сайта. Все права защищены.</p> <!-- Подвал страницы -->
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Функция для расчета стоимости заказа
+        function calculateCost() {
+            // Получаем выбранный товар и его цену
+            const productSelect = document.getElementById('product'); // Получаем элемент выбора товара
+            const price = parseFloat(productSelect.value); // Преобразуем значение цены в число
+
+            // Получаем количество товара
+            const quantityInput = document.getElementById('quantity'); // Получаем элемент ввода количества
+            const quantity = parseInt(quantityInput.value); // Преобразуем значение количества в число
+
+            // Получаем элемент для отображения итоговой стоимости
+            const totalCostDisplay = document.getElementById('totalCost'); // Получаем элемент для отображения стоимости
+
+            // Проверяем, что цена и количество больше нуля
+            if (price > 0 && quantity > 0) {
+                // Рассчитываем общую стоимость
+                const totalCost = price * quantity; // Вычисляем общую стоимость
+                // Отображаем общую стоимость на странице
+                totalCostDisplay.textContent = totalCost; // Обновляем текст элемента с итоговой стоимостью
+            } else {
+                // Если ничего не выбрано, отображаем 0
+                totalCostDisplay.textContent = '0'; // Устанавливаем значение 0
+            }
+        }
+    </script>
+</body>
+</html>
